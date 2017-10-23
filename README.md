@@ -285,7 +285,13 @@ We can apply a low pass filter on the detected lane lines, curvature and offset 
 This is done by storing those elements in a moving window queue and averaging the elements in those queue at each frame to calculate the smoothed values.
 
 ---
+
+# Areas to Improve
+
+Currently I am doing a blind search from scratch on each image, this is very in-efficient as I already know where the lanes are expected to be, I can store the information of the last frame lane location and use it to predict the location of the lane in the current frame to reduce processing time.
+
+---
+
 # Conclusion
 
 Lane lines are identified correctly through complete video, lane lines and offset are calculated and seems reasonable with the given inputs.
-
